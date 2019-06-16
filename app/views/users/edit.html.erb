@@ -1,0 +1,28 @@
+<div class="user_info">
+<h2>User info</h2>
+
+ <%= form_for(@user) do |f| %>
+	<div>
+	 <%= f.label :nama %>
+	</div>
+	<div>
+	 <%= f.text_field :name %>
+	</div>
+
+	<div>
+	 <%= f.attachment_field :profile_image %>
+	</div>
+
+	<div>
+	 <%= f.label :introduction %>
+	</div>
+	<div>
+	 <%= f.text_area :introduction %>
+	</div>
+
+	<div>
+	 <%= f.submit "Update User", class: "btn btn-primary" %>
+	</div>
+
+ <% end %>
+</div>

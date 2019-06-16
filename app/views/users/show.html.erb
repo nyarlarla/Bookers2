@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<h2>User info</h2>
+			<div class="my-image">
+				<p>プロフィール画像</p>
+			</div>
+			<table class='table'>
+				<tbody>
+					<tr>
+						<th>name</th>
+						<th><%= @user.name %></th>
+					</tr>
+					<tr>
+						<th>introduction</th>
+						<th><%= @user.introduction %></th>
+					</tr>
+				</tbody>
+			</table>
+
+		    <div class="edit-link">
+				<%= link_to "",edit_user_path(current_user),class:'btn btn-default glyphicon glyphicon-wrench btn-block' %>
+			</div>
+			<div class="new-form">
+					<h2> New book</h2>
+				 <div class="form-group">
+					<%= form_for(@book) do |f| %>
+					 <div>
+					 <%= f.label :Title %>
+					</div>
+					<div>
+					 <%= f.text_field :title %>
+					</div>
+
+	                <div>
+	                 <%= f.label :opinion %>
+					<div>
+					 <%= f.text_area :body %>
+					</div>
+				 </div>
+					<div>
+					 <%= f.submit "Create Book", class:'col-lg-3' %>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+			<div class="col-sm-9">
+			<h2>Books</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Oponion</th>
+						<th></th>
+					</tr>
+				</thead>
+				<% @user.books.each do |b| %>
+				<tbody>
+					<tr>
+						<th>P画像</th>
+						<th><%= b.title %></th>
+						<th><%= b.body %></th>
+					</tr>
+				</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
