@@ -15,7 +15,7 @@
 				<% @user.books.each do |b| %>
 				<tbody>
 					<tr>
-						<th><%= attachment_image_tag @user, :profile_image, :fill, 60,60, fallback: "no_image.jpg" %></th>
+						<th><%= attachment_image_tag @user, :profile_image, :fill, 100,100, fallback: "no_image.jpg" %></th>
 						<th><%= link_to b.title,book_path(b) %></th>
 						<th><%= b.body %></th>
 					</tr>
