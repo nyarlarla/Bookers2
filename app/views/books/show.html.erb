@@ -1,1 +1,35 @@
-ブック　詳細ページ
+<% if flash[:notice] %>
+ <h2 class="text-success"><%= flash[:notice] %></h2>
+<% end %>
+<div class="container">
+	<div class="row">
+      <%= render 'layouts/layouts', user: @book.user, book: @book %>
+		<div class="col-sm-9">
+			<h2>Book detail</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><%= attachment_image_tag @book.user, :profile_image, :fill, 60,60, fallback: "no_image.jpg" %><br/>
+							<%= link_to @book.user.name, user_path(@book.user) %>
+						</th>
+						<th><%= @book.title %></th>
+						<th><%= @book.body %></th>
+						<% if @book.user == current_user %>
+						<th><%= link_to "edit",edit_book_path,class:'btn btn-success' %></th>
+						<th><%= link_to "destroy",book_path(@book), method: :delete, class:'btn btn-danger' %>
+						<% end %>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+    </div>
+</div>

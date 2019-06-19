@@ -1,28 +1,30 @@
-<div class="user_info">
+<div class="container">
+<% if flash[:alert] %>
+ <h2 class="text-danger"><%= flash[:alert] %></h2>
+<% end %>
+<div class="col-xs-4">
 <h2>User info</h2>
 
  <%= form_for(@user) do |f| %>
 	<div>
-	 <%= f.label :nama %>
-	</div>
-	<div>
-	 <%= f.text_field :name %>
-	</div>
+	 <%= f.label :nama %><br/>
+	 <%= f.text_field :name, class: "form-control" %>
+	</div><br/>
 
 	<div>
+	 <%= f.label :image %><br/>
 	 <%= f.attachment_field :profile_image %>
-	</div>
+	</div><br/>
 
 	<div>
-	 <%= f.label :introduction %>
-	</div>
-	<div>
-	 <%= f.text_area :introduction %>
-	</div>
+	 <%= f.label :introduction %><br/>
+	 <%= f.text_area :introduction, class: "form-control" %>
+	</div><br/>
 
 	<div>
-	 <%= f.submit "Update User", class: "btn btn-primary" %>
+	 <%= f.submit "Update User", class: "btn btn-primary btn-block" %>
 	</div>
 
  <% end %>
+</div>
 </div>

@@ -1,16 +1,16 @@
 <div class="container">
+<div class="jumbotron">
 <h1>Welcome to <span class="glyphicon glyphicon-book"></span>Bookers  !!</h1>
 <p>In <span class="glyphicon glyphicon-book"></span>Bookers,<br>
 
 you can share and exchange your opinions , inpressions , and emotions<br>
 
 about varioius books!</p>
+</div>
 
- <div class="row">
-	<div class="btn-group-vertical col-sm-8" role="group">
-		<%= link_to "  Login",new_user_session_path,class:'btn btn-primary btn-block' %>
-		<%= link_to "  Sign up",new_user_registration_path,class:'btn btn-success' %>
+	<div class="btn-group-vertical btn-block" role="group" >
+		<%= link_to "Login",new_user_session_path,class: 'btn btn-primary btn-block btn-lg' %>
+		<%= link_to "Sign up",new_user_registration_path,class: 'btn btn-success btn-lg' %>
 	</div>
- </div>
 </div>
 

@@ -1,0 +1,17 @@
+<div class="container">
+<%= form_for(@book) do |e| %>
+<div>
+ <%= e.label :Title %><br/>
+ <%= e.text_field :title, class: "form-control" %>
+</div><br/>
+
+<div>
+ <%= e.label :opinion %><br/>
+ <%= e.text_area :body, class: "form-control" %>
+</div><br/>
+<div>
+ <%= e.submit "Update Book", class: "btn btn-primary btn-block btn-lg" %>
+</div><br/>
+
+<% end %>
+</div>

@@ -1,1 +1,32 @@
-投稿一覧ページです
+<% if flash[:alert] %>
+ <h2 class="text-danger"><%= flash[:alert] %></h2>
+<% end %>
+<% if flash[:notice] %>
+ <h2 class="text-danger"><%= flash[:notice] %></h2>
+<% end %>
+<div class="container">
+	<div class="row">
+		<%= render 'layouts/layouts', user: @user, book: @book %>
+		<div class="col-sm-9">
+			<h2>Books</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Oponion</th>
+						<th></th>
+					</tr>
+				</thead>
+				<% @books.each do |b| %>
+				<tbody>
+					<tr>
+						<th><%= attachment_image_tag b.user, :profile_image, :fill, 60,60, fallback: "no_image.jpg" %></th>
+						<th><%= link_to b.title,book_path(b) %></th>
+						<th><%= b.body %></th>
+					</tr>
+				</tbody>
+				<% end %>
+			</table>
+		</div>
+</div>
